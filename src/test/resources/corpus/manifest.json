@@ -1,0 +1,69 @@
+{
+  "corpus_id": "nfip-sfip",
+  "description": "NFIP Standard Flood Insurance Policy forms as published in 44 CFR Part 61.",
+  "retrieved_at": "2026-08-22",
+  "ecfr_issue_date": "2026-06-22",
+  "source_xml_sha256": "f630ae519b5bbd08fb8ad9411e76804c5335876c96c7d6ce55e0b97c809841d0",
+  "extraction": {
+    "method": "scripts/fetch_nfip_corpus.py",
+    "input_format": "eCFR versioner API XML (title-44, part 61)",
+    "output_format": "UTF-8 plain text, LF line endings",
+    "rules": [
+      "Block elements HEAD/HD1-HD4/P/FP/CITA become paragraphs in document order.",
+      "Headings are prefixed with '## ' to preserve the form's own structure.",
+      "Runs of whitespace inside a block collapse to a single space; the XML wraps lines for transport and that wrapping is not part of the regulation.",
+      "Blocks are joined with a blank line; the file ends with a newline.",
+      "No text is paraphrased, reordered, summarised, or otherwise altered."
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "nfip-sfip-dwelling",
+      "title": "Standard Flood Insurance Policy - Dwelling Form",
+      "form": "Dwelling Form",
+      "cfr_citation": "44 CFR Part 61, Appendix A(1) to Part 61",
+      "filename": "nfip-sfip-dwelling.txt",
+      "source_url": "https://www.ecfr.gov/current/title-44/chapter-I/subchapter-B/part-61",
+      "api_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-06-22/title-44.xml?part=61",
+      "ecfr_issue_date": "2026-06-22",
+      "legal_basis": "17 U.S.C. 105 - work of the United States Government, not subject to copyright protection in the United States. Authored by FEMA and promulgated as 44 CFR Part 61.",
+      "redistribution_permitted": true,
+      "attribution": "Federal Emergency Management Agency, 44 CFR Part 61, Appendix A(1) to Part 61 (eCFR issue 2026-06-22).",
+      "sha256": "c88e41a8bcdca3acf4c8c68902f53de84ba9234e5ce49b8a41430d0d2855a8bc",
+      "characters": 74960,
+      "words": 12603
+    },
+    {
+      "document_id": "nfip-sfip-general-property",
+      "title": "Standard Flood Insurance Policy - General Property Form",
+      "form": "General Property Form",
+      "cfr_citation": "44 CFR Part 61, Appendix A(2) to Part 61",
+      "filename": "nfip-sfip-general-property.txt",
+      "source_url": "https://www.ecfr.gov/current/title-44/chapter-I/subchapter-B/part-61",
+      "api_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-06-22/title-44.xml?part=61",
+      "ecfr_issue_date": "2026-06-22",
+      "legal_basis": "17 U.S.C. 105 - work of the United States Government, not subject to copyright protection in the United States. Authored by FEMA and promulgated as 44 CFR Part 61.",
+      "redistribution_permitted": true,
+      "attribution": "Federal Emergency Management Agency, 44 CFR Part 61, Appendix A(2) to Part 61 (eCFR issue 2026-06-22).",
+      "sha256": "7b33a80ef173426d82f07c972e5a7f91e6908f4a4c444f1bd96b7ce5e78ad6f0",
+      "characters": 67255,
+      "words": 11262
+    },
+    {
+      "document_id": "nfip-sfip-rcbap",
+      "title": "Standard Flood Insurance Policy - Residential Condominium Building Association Policy",
+      "form": "RCBAP",
+      "cfr_citation": "44 CFR Part 61, Appendix A(3) to Part 61",
+      "filename": "nfip-sfip-rcbap.txt",
+      "source_url": "https://www.ecfr.gov/current/title-44/chapter-I/subchapter-B/part-61",
+      "api_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-06-22/title-44.xml?part=61",
+      "ecfr_issue_date": "2026-06-22",
+      "legal_basis": "17 U.S.C. 105 - work of the United States Government, not subject to copyright protection in the United States. Authored by FEMA and promulgated as 44 CFR Part 61.",
+      "redistribution_permitted": true,
+      "attribution": "Federal Emergency Management Agency, 44 CFR Part 61, Appendix A(3) to Part 61 (eCFR issue 2026-06-22).",
+      "sha256": "229d7bcc62bd0dceb209ea7c2c8c382ada7b5ade5e03b2fc060c32f6b740854a",
+      "characters": 70393,
+      "words": 11774
+    }
+  ]
+}

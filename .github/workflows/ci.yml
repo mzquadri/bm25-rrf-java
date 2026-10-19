@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: build and parity test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      # The fixtures and the corpus are committed, so the parity test needs no
+      # Python checkout and no network: it chunks the three NFIP forms itself,
+      # verifies them against the SHA-256 in their manifest, and compares its
+      # rankings with the exported Python ones.
+      - name: Test
+        run: mvn -B test
+
+      # file.encoding is set in the POM's surefire config, because the corpus
+      # contains em dashes and curly quotes and a JVM defaulting to a Windows
+      # code page reads different bytes, a different hash and different offsets.
+      # Asserted here so the setting cannot be dropped silently.
+      - name: Surefire runs under UTF-8
+        run: grep -q 'file.encoding=UTF-8' pom.xml
