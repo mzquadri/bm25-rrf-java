@@ -1,0 +1,21 @@
+# The corpus and the fixtures must arrive byte for byte identical on every
+# platform, because ParityTest hashes them.
+#
+# Git's default autocrlf on Windows rewrites LF to CRLF on checkout. For these
+# files that changes the bytes, which changes the SHA-256, which fails the
+# manifest check before a single ranking is compared - and it would fail only
+# on Windows clones, which is the worst kind of failure to debug.
+#
+# The chunk offsets depend on this too: a CRLF corpus shifts every offset after
+# the first line break, so every chunk id would differ from the exported ones.
+
+*.txt   text eol=lf
+*.json  text eol=lf
+
+# Java sources and the build file do not affect any hash, but keeping the whole
+# tree LF avoids a diff that is nothing but line endings.
+*.java  text eol=lf
+*.xml   text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.yml   text eol=lf
